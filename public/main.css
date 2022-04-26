@@ -1,26 +1,28 @@
-<style>
-  #container {
+#container {
     width: 700px;
     margin: 0 auto;
-  }
-  .chat-input {
+}
+
+.chat-input {
     width: 300px;
     height: 35px;
     border: solid 1px #444;
-  }
-  .chat-submit {
+}
+
+.chat-submit {
     width: 50px;
     height: 35px;
     border: solid 1px #444;
-  }
-  .chat-window {
+}
+
+.chat-window {
     height: 300px;
     width: 400px;
-  }
-  #chatSection {
+}
+
+#chatSection {
     float: left;
     border: 1px grey solid;
     border-radius: 10px;
     padding: 10px;
-  }
-</style>
+}
