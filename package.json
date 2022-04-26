@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/SJKed/WebSocket-Chat-App#readme",
   "dependencies": {
+    "ejs": "^3.1.7",
     "express": "^4.18.0",
+    "express-session": "^1.17.2",
     "socket.io": "^4.5.0"
   }
 }

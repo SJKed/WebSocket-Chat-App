@@ -1,20 +1,24 @@
-const express = require('express');
-const http = require('http');
-const { Server } = require('socket.io');
-const { setupWebSocketServer } = require('./websockets/index.js');
-const {reqHandlers} = require('./controllers/reqHandlers.js');
+const express = require('express')
+const app = express()
+const server = require('http').createServer(app)
+const port = process.env.PORT || 3000
+const io = require('socket.io')(server)
+const path = require('path')
 
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
+app.use(express.static(path.join(__dirname + '/public')))
 
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
+io.on('connection', socket => {
+  console.log('Some client connected')
+})
 
-setupWebSocketServer(server)
-
-app.post('/setname', (req, res) => {
-    reqHandlers.setName(req, res);
+io.on('connection', socket => {
+    // console.log('Some client connected')
+  
+    socket.on('chat', message => {
+      console.log('From client: ', message)
+    })
 });
-server.listen(8080, () => console.log('wowie'))
+
+server.listen(port, () => {
+  console.log(`Server running on port: ${port}`)
+})

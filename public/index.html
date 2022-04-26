@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/scripts/main.js" type="module" defer></script>
+    <title>Chat app</title>
+    <script src="socket.io/socket.io.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <h1>ZOMG IT WORKS!</h1>
-    <div class="home-name-picker">
-        <form action="/setname" method="post">
-            <input type="text" name="Name">
-            <button>Pick Name</button>
-        </form>
+    <div id="container">
+        <h1>
+            Nodejs + Socket Chat app
+        </h1>
+        <div id="chatSection">
+            <div class="chat-window"></div>
+            <form class="chat-form">
+                <label class="chat-label">
+                    Enter a message:
+                    <input type="text" class="chat-input" />
+                </label>
+                <input type="submit" class="chat-submit" value="enter" />
+            </form>
+        </div>
     </div>
+
+
 </body>
+
 </html>
