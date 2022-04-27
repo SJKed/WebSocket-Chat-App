@@ -15,6 +15,10 @@ io.on('connection', socket => {
         io.emit('chat', message)
     })
 })
+
+
+
 server.listen(port, () => {
     console.log(`Server running on port: ${port}`)
 })
+
